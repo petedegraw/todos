@@ -1,0 +1,54 @@
+body {
+  font: 16px/1.8em sans-serif;
+}
+
+#todos ul {
+  margin-left: -40px;
+}
+
+.todo_li {
+  cursor: pointer;
+  max-width: 400px;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  line-height: 36px;
+  display: flex;
+  flex-direction: row;
+}
+
+.todo_li:hover {
+  background: #ededed;
+}
+.todo_li:not(.todo_li--completed):hover span {
+  text-decoration: underline;
+}
+
+.todo_li:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.todo_li div {
+  width: 4%;
+  margin-left: 6px;
+}
+
+.todo_li span {
+  display: block;
+  flex: 0 1 85%;
+}
+
+.todo_li button {
+  display: block;
+  align-self: center;
+}
+
+.todo_li--completed {
+  background: #efefef;
+}
+
+.todo_li--completed span {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #555;
+}
