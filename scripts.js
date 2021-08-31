@@ -38,7 +38,7 @@ function generateListItems() {
     html += `<li class="todo_li ${classes}" data-id="${todo.id}" data-done="${todo.done}">`;
     html += `<div>${todo.done ? '&#10004;' : '&#10065;'}</div>`;
     html += `<span>${todo.text}</span>`;
-    html += `<button title="delete">&#10006;</button>`;
+    html += `<button class="delete" title="delete">&#10006;</button>`;
     html += `</li>`;
     return html;
   });
@@ -46,7 +46,7 @@ function generateListItems() {
 }
 
 function dispatchUpdate() {
-  localStorage.setItem('todos', JSON.stringify(todos)); // update local storage
+  localStorage.setItem('todos', JSON.stringify(todos));
   updateInterface();
 }
 
@@ -90,10 +90,11 @@ form.addEventListener('submit', (e) => {
 
 todoList.addEventListener('click', (e) => {
   // console.log('click', e);
-  if (e.target.localName === 'button') {
-    removeTodo(e.target.parentElement.dataset.id);
-  } else if (e.target.parentElement.localName === 'li') {
-    completeTodo(e.target.parentElement.dataset.id);
+  const el = e.target;
+  if (el.classList.contains('delete')) {
+    removeTodo(el.parentElement.dataset.id);
+  } else if (el.parentElement.classList.contains('todo_li')) {
+    completeTodo(el.parentElement.dataset.id);
   }
 });
 
