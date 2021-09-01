@@ -26,14 +26,14 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.resolve(__dirname, 'src/index.html'),
     }),
     new MiniCssExtractPlugin(),
   ],
   devServer: {
     hot: true,
-    // contentBase: path.resolve(__dirname, 'public'),
     compress: true,
+    // contentBase: path.resolve(__dirname, 'public'),
     // publicPath: '/',
   },
 };
