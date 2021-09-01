@@ -1,6 +1,6 @@
 const copy = require('../fixtures/copy');
 
-describe('Todo App - index.html', () => {
+describe('Todo app display', () => {
   beforeEach(() => {
     cy.visit('localhost:5000');
     cy.fixture('copy.json').as('copy');
@@ -37,6 +37,13 @@ describe('Todo App - index.html', () => {
 
     cy.get('#deleteTodos').should('exist');
     cy.get('#deleteTodos').should('have.text', copy.deleteAll);
+  });
+});
+
+describe('Todo app interactions', () => {
+  beforeEach(() => {
+    cy.visit('localhost:5000');
+    cy.fixture('copy.json').as('copy');
   });
 
   it('can add a todo item', () => {
