@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -18,18 +18,24 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }, { from: 'src/styles.css' }],
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, 'public/index.html'),
     }),
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
   ],
+  devServer: {
+    hot: true,
+    // contentBase: path.resolve(__dirname, 'public'),
+    compress: true,
+    // publicPath: '/',
+  },
 };
 
 module.exports = config;

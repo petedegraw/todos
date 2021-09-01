@@ -1,3 +1,5 @@
+import './styles.scss';
+
 const app = document.getElementById('todos');
 const form = app.querySelector('form');
 const todoList = app.querySelector('ul');
