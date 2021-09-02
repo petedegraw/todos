@@ -111,10 +111,15 @@ main {
   color: var(--nc-bg-3);
 }
 
-.todo_li--completed span {
-  text-decoration: line-through;
-  font-style: italic;
-  // color: #555;
+.todo_li--completed {
+  span {
+    text-decoration: line-through;
+    font-style: italic;
+  }
+  div,
+  span {
+    color: #757575;
+  }
 }
 
 #actions {
