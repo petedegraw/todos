@@ -78,23 +78,28 @@ main {
 
 .todo_li {
   align-items: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  line-height: 1.75em;
+  line-height: 1.5em;
   transition: background-color ease-in-out 0.15s;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: var(--nc-lk-2);
+    background-color: var(--nc-bg-2);
+  }
 }
 
-.todo_li:hover {
-  background-color: var(--nc-bg-2);
-}
 .todo_li:not(.todo_li--completed):hover span {
   text-decoration: underline;
 }
 
 .todo_li div {
   font-size: 24px;
-  margin-left: 6px;
   margin-top: -4px;
   text-align: center;
   width: 6%;
@@ -128,6 +133,7 @@ main {
 
 #actions {
   text-align: right;
+  padding: 2px;
 }
 
 button {
@@ -135,6 +141,8 @@ button {
   color: var(--nc-lk-2);
   background-color: transparent;
   transition: background-color ease-in-out 0.15s;
+  &:active,
+  &:focus,
   &:hover {
     background-color: var(--nc-bg-2);
     &:before {

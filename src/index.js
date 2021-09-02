@@ -46,7 +46,7 @@ function generateListItems() {
   let todosArray = Object.values(todos).map((todo) => {
     let classes = todo.done ? 'todo_li--completed' : '';
     let html = '';
-    html += `<li class="todo_li ${classes}" data-id="${todo.id}" data-done="${todo.done}" title="click to mark complete">`;
+    html += `<li class="todo_li ${classes}" data-id="${todo.id}" data-done="${todo.done}" title="click to mark complete" tabindex="0">`;
     html += `<div>${todo.done ? '&#10004;' : '&#10065;'}</div>`;
     html += `<span>${todo.text}</span>`;
     html += `<button class="delete" title="click to delete the todo item">&#10006;</button>`;
@@ -107,6 +107,14 @@ todoList.addEventListener('click', (e) => {
     removeTodo(el.parentElement.dataset.id);
   } else if (el.parentElement.classList.contains('todo_li')) {
     completeTodo(el.parentElement.dataset.id);
+  }
+});
+
+todoList.addEventListener('keydown', (e) => {
+  // console.log('click', e);
+  if (e.key === 'Enter' || e.key === ' ') {
+    const el = e.target;
+    completeTodo(el.dataset.id);
   }
 });
 
