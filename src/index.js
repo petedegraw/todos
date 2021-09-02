@@ -21,7 +21,6 @@ function updateInterface() {
   todoList.innerHTML = generateListItems();
 
   if (Object.keys(todos).length > 0) {
-    app.scrollTop = app.scrollTopMax;
     if (!document.getElementById('deleteTodos')) {
       let button = document.createElement('button');
       button.id = 'deleteTodos';
@@ -70,6 +69,7 @@ function addTodo(value) {
     text: value,
   };
   dispatchUpdate();
+  app.scrollTop = app.scrollTopMax;
 }
 
 function completeTodo(id) {
