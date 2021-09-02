@@ -1,6 +1,6 @@
 describe('Todos from local storage update UI', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
     let lsAll =
       '{"1":{"id":1,"done":false,"text":"check email"},"2":{"id":2,"done":false,"text":"feed the dog"},"3":{"id":3,"done":false,"text":"pay the bill"}}';
     localStorage.setItem('todos', lsAll);
@@ -18,7 +18,7 @@ describe('Todos from local storage update UI', () => {
 
 describe('Todos are added to local storage', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
 
     const newItems = ['check email', 'feed the dog', 'pay the bill'];
 
@@ -36,7 +36,7 @@ describe('Todos are added to local storage', () => {
 
 describe('Removed todos are updated in local storage', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
 
     const newItems = ['check email', 'feed the dog', 'pay the bill'];
 
@@ -55,7 +55,7 @@ describe('Removed todos are updated in local storage', () => {
 
 describe('Completed todos are updated in local storage', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
     let lsAll =
       '{"1":{"id":1,"done":false,"text":"check email"},"2":{"id":2,"done":false,"text":"feed the dog"},"3":{"id":3,"done":false,"text":"pay the bill"}}';
     localStorage.setItem('todos', lsAll);
@@ -71,7 +71,7 @@ describe('Completed todos are updated in local storage', () => {
 
 describe('Deleted todos are updated in local storage', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
     let lsAll =
       '{"1":{"id":1,"done":false,"text":"check email"},"2":{"id":2,"done":false,"text":"feed the dog"},"3":{"id":3,"done":false,"text":"pay the bill"}}';
     localStorage.setItem('todos', lsAll);

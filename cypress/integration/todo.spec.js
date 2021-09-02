@@ -2,13 +2,13 @@ const copy = require('../fixtures/copy');
 
 describe('Todo app display', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
     cy.fixture('copy.json').as('copy');
   });
 
   it('displays a heading', () => {
     cy.fixture('copy').should((copy) => {
-      cy.get('h1').contains(copy.heading);
+      cy.get('.heading > :nth-child(2)').contains(copy.heading);
     });
   });
 
@@ -42,7 +42,7 @@ describe('Todo app display', () => {
 
 describe('Todo app interactions', () => {
   beforeEach(() => {
-    cy.visit('localhost:5000');
+    cy.visit('localhost:8080');
     cy.fixture('copy.json').as('copy');
   });
 

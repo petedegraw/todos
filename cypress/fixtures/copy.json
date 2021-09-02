@@ -1,6 +1,6 @@
 {
-  "heading": "Todos",
-  "label": "New Todo",
-  "submit": "Submit",
-  "deleteAll": "Remove All"
+  "heading": "todos",
+  "label": "new todo",
+  "submit": "submit",
+  "deleteAll": "remove all"
 }
