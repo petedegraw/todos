@@ -2,20 +2,46 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Todos App</title>
+    <title>My Todos</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-fonts@1.1.1/fonts/inter.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
   </head>
 
   <body>
-    <h1>Todos</h1>
-    <div id="todos">
-      <ul></ul>
-      <form>
-        <label>New Todo</label>
-        <input type="text" placeholder="enter a todo item" />
-        <button type="submit">Submit</button>
-      </form>
+    <main>
+      <div class="heading">
+        <div class="controls">
+          <span id="close">&#9679;</span>
+          <span>&#9679;</span>
+          <span>&#9679;</span>
+        </div>
+        todos
+      </div>
+      <div id="todos">
+        <ul></ul>
+        <div id="actions"></div>
+        <form>
+          <label>new todo</label>
+          <input autofocus type="text" />
+          <button type="submit" title="click or press enter/return to add the todo item">submit</button>
+        </form>
+      </div>
+    </main>
+    <div class="credit">
+      <p>
+        App by <a href="https://petedegraw.com/" target="_blank">Pete DeGraw</a> &bull; Photo by
+        <a
+          target="_blank"
+          href="https://unsplash.com/@freedomstudios?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Graham Holtshausen</a
+        >
+        on
+        <a href="https://unsplash.com/s/photos/background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Unsplash</a
+        >
+      </p>
     </div>
   </body>
 </html>

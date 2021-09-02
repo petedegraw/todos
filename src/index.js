@@ -3,6 +3,8 @@ import './styles.scss';
 const app = document.getElementById('todos');
 const form = app.querySelector('form');
 const todoList = app.querySelector('ul');
+const actions = app.querySelector('#actions');
+const close = document.querySelector('#close');
 let todos = {};
 
 // add testing
@@ -22,13 +24,20 @@ function updateInterface() {
     if (!document.getElementById('deleteTodos')) {
       let button = document.createElement('button');
       button.id = 'deleteTodos';
-      button.textContent = 'Remove All';
+      button.textContent = 'remove all';
+      button.title = 'click to remove all todo items';
       button.onclick = removeAllTodos;
-      app.prepend(button);
+      actions.append(button);
+
+      close.onclick = removeAllTodos;
+      close.title = 'click to remove all todo items';
+      close.classList = 'close--active';
     }
   } else {
     if (document.getElementById('deleteTodos')) {
       document.getElementById('deleteTodos').remove();
+      close.onclick = null;
+      close.classList = '';
     }
   }
 }
@@ -37,10 +46,10 @@ function generateListItems() {
   let todosArray = Object.values(todos).map((todo) => {
     let classes = todo.done ? 'todo_li--completed' : '';
     let html = '';
-    html += `<li class="todo_li ${classes}" data-id="${todo.id}" data-done="${todo.done}">`;
+    html += `<li class="todo_li ${classes}" data-id="${todo.id}" data-done="${todo.done}" title="click to mark complete">`;
     html += `<div>${todo.done ? '&#10004;' : '&#10065;'}</div>`;
     html += `<span>${todo.text}</span>`;
-    html += `<button class="delete" title="delete">&#10006;</button>`;
+    html += `<button class="delete" title="click to delete the todo item">&#10006;</button>`;
     html += `</li>`;
     return html;
   });
