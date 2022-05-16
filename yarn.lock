@@ -996,6 +996,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@playwright/test@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-1.22.0.tgz#c120d673508291ee63095d727b6f998ea0c6a03f"
+  integrity sha512-ExcAjiECo3uTG5Sl5H4a7rKp/5TEHTI87dv9NHYEoUFuOHPhSVxB7QsuM70ktO+wTTZ9KzhwzcegxAGRmUFKEA==
+  dependencies:
+    playwright-core "1.22.0"
+
 "@types/eslint-scope@^3.7.0":
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.1.tgz#8dc390a7b4f9dd9f1284629efce982e41612116e"
@@ -4765,6 +4772,11 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+playwright-core@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.22.0.tgz#e738a0c83f4be0984c953ab25d2bc77545187ecc"
+  integrity sha512-XnDPiV4NCzTtXWxQdyJ6Wg8xhST3ciUjt5mITaxoqOoYggmRtofKm0PXLehfbetXh2ppPYj5U8UhtUpdIE4wag==
 
 portfinder@^1.0.28:
   version "1.0.28"
